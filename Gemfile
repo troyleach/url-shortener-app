@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 # Items added by Author
 gem 'bootstrap-sass'
+gem 'quiet_assets'
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use mysql as the database for Active Record
