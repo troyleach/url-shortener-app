@@ -17,20 +17,13 @@ class LinksController < ApplicationController
       flash[:message] = "Something was wrong with your form"
       render "new"
     end
-
-
-
   end
 
-  def redirect
-    @link = Link.find_by(:slug => params[:slug])
-   
-    redirect_to "http://#{@link.target_url}"
+  def show
+    @link = Link.find_by(:id => params[:id])
   end
 
   def new
     @link = Link.new
   end
-
-
 end

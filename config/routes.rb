@@ -23,7 +23,8 @@ Rails.application.routes.draw do
    put    'links/:id'     => 'links#pudate'
    delete 'links/:id'     => 'links#destroy'
 
-   get '/:slug'           => 'links#redirect'
+   resources :visits
+   get '/:slug' => 'visits#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

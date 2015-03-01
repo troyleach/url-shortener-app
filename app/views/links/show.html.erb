@@ -1,0 +1,6 @@
+<h1>Link Stats for <%= @link.slug %></h1>
+<h3>Visits: <%= @link.visit_count %></h3>
+
+<% @link.visits.each do |visit| %>
+ <p><%= visit.ip_address %></p>
+<% end %>
