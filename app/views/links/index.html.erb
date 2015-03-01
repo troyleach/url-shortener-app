@@ -1,1 +1,21 @@
 <h1>Welcome to links shortener</h1>
+
+<p><a href="<%= new_link_path %>">Your link</a></p>
+<p><a href="<%= '/urls/new' %>">Create shorten URL</a></p>
+
+<h1>Your links</h1>
+
+<table>
+  <tr>
+    <th>Slug</th>
+    <th>Target URL</th>
+    <th>Created At</th>
+  </tr>
+  <% @links.each do |link| %>
+    <tr>
+      <td><%= link.slug %></td>
+      <td><%= link.target_url %></td>
+      <td><%= link.created_at %></td>
+    </tr>
+  <% end %>
+<table>

@@ -16,12 +16,14 @@ Rails.application.routes.draw do
 
    get '/links'           => 'links#index',   :as => :links
    post 'links'           => 'links#create'
-   get  'links/new'       => 'links/new',     :as => :new_link
+   get  'links/new'       => 'links#new',     :as => :new_link
    get  'links/:id/edit'  => 'links#edit',    :as => :edit_link
    get  'links/:id'       => 'links#show',    :as => :link
    patch  'links/:id'     => 'links#update'
    put    'links/:id'     => 'links#pudate'
    delete 'links/:id'     => 'links#destroy'
+
+   get '/:slug'           => 'links#redirect'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

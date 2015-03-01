@@ -1,0 +1,32 @@
+<h1>Lets create a new link</h1>
+
+<% if @link.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@link.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+    <% @link.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if user_signed_in? %> 
+<h4>Create a link</h4>
+  <%= form_tag links_path do %>
+    <div>
+      <%= label_tag :slug %>
+      <%= text_field_tag :slug, @link.slug %>
+    </div>
+
+    <div>
+      <%= label_tag :target_url %>
+      <%= text_field_tag :target_url, @link.target_url %>
+    </div>
+
+      <%= submit_tag "Create Link" %>
+      
+  <% end %>
+<% end %>
+
